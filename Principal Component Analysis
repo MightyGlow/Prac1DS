@@ -1,0 +1,29 @@
+> data_iris <- iris[1:4]
+> cov_data <- cov(data_iris)
+> cov_data
+
+
+> eigen_data <- eigen(cov_data)
+> eigen_data
+
+
+> pca_data <- princomp(data_iris, cor='False')
+> pca_data
+
+
+
+> eigen_data$values
+> pca_data$sdev^2
+> pca_data$loading[,1:4]
+> summary(pca_data)
+
+
+> screeplot(pca_data, type="lines")
+> biplot(pca_data)
+
+> model2=pca_data$loading[,1]
+> model2
+
+> model2scores<-as.matrix(data_iris)%*%model2
+> model2scores
+
